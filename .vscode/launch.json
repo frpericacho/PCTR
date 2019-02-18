@@ -1,0 +1,486 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - sPiMontecarlo",
+            "request": "launch",
+            "mainClass": "ejerciciosexamen.pruebarmi.sPiMontecarlo",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - sBonoLoto",
+            "request": "launch",
+            "mainClass": "practica11.sBonoLoto",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ejercicio4",
+            "request": "launch",
+            "mainClass": "ejercicios_para_practicar.ejercicio4",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usalectorEscritor",
+            "request": "launch",
+            "mainClass": "practica8.usalectorEscritor",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ejercico2",
+            "request": "launch",
+            "mainClass": "ejercicios_para_practicar.ejercico2",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usaConductores",
+            "request": "launch",
+            "mainClass": "practica8.usaConductores",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - proEscalar",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "ejerciciosexamen.febrero1718.proEscalar",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ServidorHiloconPool",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica7.ServidorHiloconPool",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - resImagenParFi",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica6.resImagenParFi",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - algoLamport",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica5.algoLamport",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - prueba",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica5.prueba",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - algDekker",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica5.algDekker",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UsaprodMatConcurrente",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica4.UsaprodMatConcurrente",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - prodMat2",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica4.prodMat2",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - prodMat",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica4.prodMat",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - matVectorConcurrente",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica4.matVectorConcurrente",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - matVector",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica4.matVector",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usa_cajero",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica3.usa_cajero",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - hilosYield",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "seminarios.hilosYield",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Daemon",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "seminarios.Daemon",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - hDaemon",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "seminarios.hDaemon",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - escalaVectorParalelo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica3.escalaVectorParalelo",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usa_hilo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica3.usa_hilo",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usaTodo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica3.usaTodo",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - triangulo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica3.triangulo",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - acelularparalelo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "seminarios.acelularparalelo",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - diapositiva15",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "seminarios.seminario2.diapositiva15",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - poligono",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica3.poligono",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usaElipse",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica2.usaElipse",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usaComplejos",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica2.usaComplejos",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Estadistica",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica2.Estadistica",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ejercicio7",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "seminarios.seminario2.ejercicio7",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ack",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica2.Ack",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - biblioteca",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica2.biblioteca",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - prueba",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica1.prueba",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - cruzafuncion_clase",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "seminarios.cruzafuncion_clase",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - menu",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica2.menu",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - intDefinidaMonteCarlo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica1.intDefinidaMonteCarlo",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - aleatorios",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica1.aleatorios",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - desCesar",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica1.desCesar",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Cesar",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica1.Cesar",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NewtonRaphson",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica1.NewtonRaphson",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - circulo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica1.circulo",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - practica4",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica1.practica4",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - practica",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "practica1.practica",
+            "args": "",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - practica1",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "practica1.practica1",
+            "args": "",
+            "projectName": "Practicas"
+        }
+    ]
+}
