@@ -80,6 +80,7 @@ public class aRendimiento {
                 }});
             ejecutor.shutdown();
             while(!ejecutor.isTerminated());
+            System.out.println(val);
         }
     }
 

@@ -45,5 +45,6 @@ public class cPiMontecarlo {
         } catch (NotBoundException | MalformedURLException | RemoteException ex) {
             Logger.getLogger(cPiMontecarlo.class.getName()).log(Level.SEVERE, null, ex);
         }
+        sc.close();
     }
 }

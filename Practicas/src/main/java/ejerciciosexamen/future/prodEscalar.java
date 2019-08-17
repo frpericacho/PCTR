@@ -59,5 +59,6 @@ public class prodEscalar implements Callable<Float> {
             }
         }
         System.out.println(res);
+        s.close();
     }
 }

@@ -1,6 +1,6 @@
 package ejerciciosexamen.junio1314;
 
-import java.rmi.Naming;
+//import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -42,13 +42,14 @@ public class sIBEX52 extends UnicastRemoteObject implements iIBEX52 {
     }
 
     public static void main(String[] args) {
-        try {
-            sIBEX52 server = new sIBEX52(2020);
+        /*try {
+            //sIBEX52 server = new sIBEX52(2020);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
         inicializa();
        // Naming.bind("servidor", server);
         System.out.println("servidor listo");
+    */
     }
 }

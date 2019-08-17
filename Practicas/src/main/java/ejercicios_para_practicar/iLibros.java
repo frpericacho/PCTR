@@ -6,5 +6,4 @@ public interface iLibros extends Remote{
 	public String consultar(String parametro) throws RemoteException;
 	public void borrar(String nombre) throws RemoteException;
 	
-	
 }

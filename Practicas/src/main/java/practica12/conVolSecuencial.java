@@ -32,6 +32,7 @@ public class conVolSecuencial{
             case 4: fun_sobel(); break;
             case 5: fun_sharpen(); break;
         }
+        s.close();
     }
 
     public static void fun_sharpen() {

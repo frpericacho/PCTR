@@ -152,7 +152,7 @@ public class suavimagenANTH implements Runnable{
                 System.err.println("Opcion Invalida.\n");
                 break;
         }
-        
+        S.close();
     }
     public static BigDecimal truncateDecimal(double x,int numberofDecimals)
     {

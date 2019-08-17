@@ -60,7 +60,7 @@ public class sLibro extends UnicastRemoteObject implements iLibros{
 	}
 	public static void main(String []arg)throws Exception{
 
-		iLibros ORemoto=new sLibro();
+		iLibros ORemoto = new sLibro();
 		Naming.bind("servidor",ORemoto);
 		System.out.println("Servidor remoto preparado");
 		
