@@ -24,7 +24,6 @@ public class prodEscalar implements Callable<Float> {
         for(int i = 0;i < 10000; i++){
             res += v1[i] * v2[i];
         }
-
         return res;
     }
 
