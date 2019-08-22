@@ -6,14 +6,14 @@ import java.util.concurrent.Executors;
 
 public class calorparalela implements Runnable{
     public static int[] escala = new int[201];
-    public static int[][] mesc = new int[1000][1000];
-    public static int[][] mlec = new int[1000][1000];
+    public static int[][] mesc = new int[16][16];
+    public static int[][] mlec = new int[16][16];
     public static int ini,fin;
     public static Random r = new Random();
 
     public void run() {
         for(int i = ini; i < fin; i++){
-            for(int j = 0; j < 1000; j++){
+            for(int j = 0; j < 16; j++){
                 mesc[i][j] = mlec[i][j] + escala[r.nextInt(201)]*(mlec[i+1][j] + mlec[i-1][j] - 2*mlec[i][j]) + escala[r.nextInt(201)]*(mlec[i][j+1] + mlec[i][j-1] - 2*mlec[i][j]);
             }
         }
@@ -34,8 +34,8 @@ public class calorparalela implements Runnable{
         inicializa();
         ExecutorService exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         for(int i = 0;i < Runtime.getRuntime().availableProcessors(); i++){
-            inicio = i*(1000/4);
-            fini = (i+1)*(1000/4);
+            inicio = i*(16/4);
+            fini = (i+1)*(16/4);
             exe.execute(new calorparalela(inicio,fini));
         }
         exe.shutdown();
@@ -43,14 +43,14 @@ public class calorparalela implements Runnable{
     }
 
     public static void inicializa(){
-        for(int i = 490;i < 510; i++){
-            for(int j = 490;j < 510; j++){
+        for(int i = 4;i < 6; i++){
+            for(int j = 4;j < 6; j++){
                 mlec[i][j] = 50;
             }
         }
-        for(int i = 0; i < 1000; i++){
-            for(int j = 0;j < 1000; j++){
-                if(i == 0 || i == 999 || j == 0 || j == 999)
+        for(int i = 0; i < 16; i++){
+            for(int j = 0;j < 16; j++){
+                if(i == 0 || i == 9 || j == 0 || j == 9)
                     mlec[i][j] = 100;
                 else
                     mlec[i][j] = 0;

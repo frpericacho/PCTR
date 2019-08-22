@@ -65,8 +65,8 @@ public class sIBEX5 extends UnicastRemoteObject implements iIBEX5{
         System.out.println("el servidor esta listo");
     }
 }
-
+/*
  interface iIBEX5 extends Remote{
     void consultar_todos() throws RemoteException;
     void consultar_uno(int val) throws RemoteException;
-}
+}*/
