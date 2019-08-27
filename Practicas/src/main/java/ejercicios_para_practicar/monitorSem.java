@@ -1,20 +1,40 @@
 package ejercicios_para_practicar;
 
-public class monitorSem{
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
-    public static void waitSem(){
+public class monitorSem {
+    static int cant;
+    public static ReentrantLock lock = new ReentrantLock();
+    public static Condition c = lock.newCondition();
 
+    public monitorSem(int cant) {
+        this.cant = cant;
     }
 
-    public static void signalSem(){
-        
+    public static void waitSem() {
+        lock.lock();
+        try {
+            while (cant == 0) {
+                try {
+                    c.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            cant--;
+        } finally {
+            lock.unlock();
+        }
     }
 
-    public synchronized void como(){
-
-    }
-
-    public synchronized void cocino(){
-        
+    public static void signalSem() {
+        lock.lock();
+        try {
+            cant++;
+            c.signal();
+        } finally {
+            lock.unlock();
+        }
     }
 }
