@@ -12,7 +12,7 @@ public class monitorSem {
         this.cant = cant;
     }
 
-    public static void waitSem() {
+    public void waitSem() {
         lock.lock();
         try {
             while (cant == 0) {
@@ -28,7 +28,7 @@ public class monitorSem {
         }
     }
 
-    public static void signalSem() {
+    public void signalSem() {
         lock.lock();
         try {
             cant++;
