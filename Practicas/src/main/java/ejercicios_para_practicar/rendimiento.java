@@ -9,10 +9,14 @@ import java.util.concurrent.CyclicBarrier;
 
 public class rendimiento implements Runnable {
 
+    public static double t_s = 0, t_a = 0, t_r = 0;
     public int id;
-    public static int val = 0, cant = 100;
+    public static int val = 0, cant = 100000;
     public static Object cerrojo = new Object();
-    public static CyclicBarrier barrera = new CyclicBarrier(3);
+    public static CyclicBarrier barrera = new CyclicBarrier(3, ()->{
+        imprime(t_s, t_s, t_r);
+        cant+=100000;
+    });
     public static ReentrantLock lock = new ReentrantLock();
     public static AtomicInteger atom = new AtomicInteger(0);
 
@@ -32,7 +36,6 @@ public class rendimiento implements Runnable {
 
     @Override
     public void run() {
-        double t_s = 0, t_a = 0, t_r = 0;
         if (id == 0) {
             double inicio_s = System.currentTimeMillis();
             f_syn();
@@ -51,8 +54,6 @@ public class rendimiento implements Runnable {
         }
         try {
             barrera.await();
-            imprime(t_s, t_a, t_r);
-            cant += 100;
         } catch (InterruptedException | BrokenBarrierException e) {
             e.printStackTrace();
         }
