@@ -4,34 +4,51 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.Condition;
 
 public class lineaCajas{
-    public static ReentrantLock lock = new ReentrantLock();
-    public static Condition c = lock.newCondition();
-    public static int clientes = 0;
-    public static boolean[] cajas = new boolean[20];
+    ReentrantLock lock = new ReentrantLock();
+    Condition c = lock.newCondition();
+    int cajas[] = new int[20];
+    boolean haycaja = true;
 
-    public static void espera(int id){
+    public lineaCajas(){
+        for(int i = 0; i < 20; i++)
+            cajas[i] = 0;
+    }
+
+    public int irCaja(int id){
         lock.lock();
+        int caja = 0;
         try{
-            while(clientes == 10){
-                try {
+            try {
+                while(!haycaja){
                     c.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
+                for(int i = 0; i < 20; i++){
+                    if(cajas[i] < 10){
+                        caja = i;
+                        cajas[i]++;
+                        break;
+                    }
+                }
+                int total_client = 0;
+                for(int i = 0; i < 20; i++){
+                    total_client += cajas[i];
+                }
+                if(total_client == 10*20)
+                    haycaja = false;
+                System.out.println("El cliente " + id + " ha entrado en la caja " + caja + " en el puesto " + cajas[caja]);
+            } catch (Exception e) {
             }
-            cajas[id] = false;
-            clientes++;
-            c.signalAll();
         }finally{
             lock.unlock();
+            return caja;
         }
     }
 
-    public static void atiende(int id){
+    public void salirCaja(int id, int caja){
         lock.lock();
         try{
-            clientes--;
-            cajas[id] = true;
+            System.out.println("el cliente " + id + " ha salido de la caja " + caja);
+            cajas[caja]--;
             c.signalAll();
         }finally{
             lock.unlock();
