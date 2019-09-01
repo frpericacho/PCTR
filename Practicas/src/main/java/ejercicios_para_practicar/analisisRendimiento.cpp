@@ -5,7 +5,11 @@
 #include <mutex>
 #include <thread>
 #include <vector>
+//clang++ analisisRendimiento.cpp -std=c++17 -pthread -o analisisRendimiento
+//./analisisRendimiento
 
+//g++ analisisRendimiento.cpp -std=c++17 -pthread -o analisisRendimiento
+//.\analisisRendimiento
 class analisisRendimiento {
  public:
   int m_cont;
