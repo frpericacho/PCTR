@@ -1,4 +1,4 @@
-package practica10;
+package Practicas18.practica10;
 
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;

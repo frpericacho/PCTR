@@ -1,4 +1,4 @@
-package practica2;
+package Practicas18.practica2;
 import java.util.*;
 
 class Estadistica{
@@ -6,7 +6,9 @@ class Estadistica{
         int n = 0,a = 1,b = 1;
         Scanner S = new Scanner(System.in);
         Random r = new Random();
-        n = Integer.parseInt(args[0]); 
+        System.out.println("Introduzca la cantidad");
+        n = S.nextInt();
+        System.out.println();
         int []vec = new int[n];
         for(int i = 0;i < n; ++i){
             vec[i] = r.nextInt(n);

@@ -1,4 +1,4 @@
-package practica11;
+package Practicas18.practica11;
 import java.rmi.*;
 
 public interface iLibro extends Remote{

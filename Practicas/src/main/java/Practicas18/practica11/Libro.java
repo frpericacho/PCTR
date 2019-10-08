@@ -1,4 +1,4 @@
-package practica11;
+package Practicas18.practica11;
 
 public class Libro{
 	public String nombre,autor;

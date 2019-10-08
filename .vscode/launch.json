@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - NewtonRaphson",
+            "request": "launch",
+            "mainClass": "Practicas19.practica1.NewtonRaphson",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - aeropuerto",
             "request": "launch",
             "mainClass": "ejerciciosexamen.monitor2.aeropuerto",

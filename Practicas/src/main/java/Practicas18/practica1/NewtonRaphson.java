@@ -1,4 +1,4 @@
-package practica1;
+package Practicas18.practica1;
 import java.util.Scanner;
 
 class NewtonRaphson{    
@@ -19,7 +19,6 @@ class fun1{
         System.out.println("introduzca la primera aproximacion");
         Scanner S = new Scanner(System.in);
         a = S.nextDouble();
-        S.close();
         double iter = Math.abs(f1(a));
         System.out.println(" f1 ");
         while(iter >= e0){
@@ -38,17 +37,16 @@ class fun2{
         return 2*x;
     }
     public static void resultado() {
-        double a,e0 = 0.000000001;
+        double b,e0 = 0.000000001;
         System.out.println("introduzca la primera aproximacion");
-        Scanner S = new Scanner(System.in);
-        a = S.nextDouble();
-        S.close();
-        double iter = Math.abs(f2(a));
+        Scanner D = new Scanner(System.in);
+        b = D.nextDouble();
+        double iter = Math.abs(f2(b));
         while(iter >= e0){
-            a = a - f2(a)/df2(a);
-            System.out.println(" x = "+a);
-            iter = Math.abs(Math.pow(a,2)-5);
-            System.out.println(" f(x) ="+(Math.pow(a,2)-5));
+            b = b - f2(b)/df2(b);
+            System.out.println(" x = "+b);
+            iter = Math.abs(Math.pow(b,2)-5);
+            System.out.println(" f(x) ="+(Math.pow(b,2)-5));
         }
     }
 }

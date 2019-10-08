@@ -1,4 +1,4 @@
-package practica1;
+package Practicas18.practica1;
 import java.util.Scanner;
 
 class aleatorios{
