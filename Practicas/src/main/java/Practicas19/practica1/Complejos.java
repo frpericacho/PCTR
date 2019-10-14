@@ -1,5 +1,5 @@
 package Practicas19.practica1;
-import java.util.*;
+//import java.util.*;
 
 class Complejos{
     public Complejos(double real,double imaginario){

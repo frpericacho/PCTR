@@ -1,6 +1,6 @@
-package Practicas18.practica3;
+package Practicas19.practica2;
 
-public class usa_cajero {
+public class redCajeros {
     public static void main(String[] args) {
         Thread[] hilos = new Thread[4];
         cajero.inicializa(122, 10e4);

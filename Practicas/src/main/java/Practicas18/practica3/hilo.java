@@ -1,4 +1,4 @@
-package practica3;
+package Practicas18.practica3;
 
 public class hilo extends Thread{
 
