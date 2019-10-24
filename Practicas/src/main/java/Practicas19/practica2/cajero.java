@@ -16,7 +16,7 @@ public class cajero implements Runnable{
     }
 
     public void run(){
-        for(int i = 0;i < 10; ++i){
+        for(int i = 0;i < 1000; ++i){
             if(op){
                 caja.Deposito(100);
             }else{

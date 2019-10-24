@@ -35,7 +35,7 @@ public class cuentaCorrienta {
         }
     }
 
-    public int Codigo() //
+    public int Codigo()
     {
         return (Codigo_Cuenta);
     }
