@@ -15,10 +15,10 @@ class matVectorConcurrente implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
 
-        mat = new int[(int)10e2][(int)10e2]; 
-        vec = new int[(int)10e2];
-        res = new int[(int)10e2];
-        int cant = (int)10e2;
+        int cant = (int)10e6;
+        mat = new int[cant][cant]; 
+        vec = new int[cant];
+        res = new int[cant];
 
         Thread[] hilos = new Thread[cant];
 
@@ -39,7 +39,6 @@ class matVectorConcurrente implements Runnable {
         for(int i = 0; i < cant; ++i){
             hilos[i].join();
         }
-        
     }
 
     @Override

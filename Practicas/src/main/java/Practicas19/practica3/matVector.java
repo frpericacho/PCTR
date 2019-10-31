@@ -6,10 +6,10 @@ class matVector{
 
     static Random r = new Random();
     public static void main(String[] args) {
-        int aux[] = new int[(int)10e2];
-        int mat[][] = new int[(int)10e2][(int)10e2]; 
-        int vec[] = new int[(int)10e2];
-        int i = (int)10e2;
+        int i = (int)10e6;
+        int mat[][] = new int[i][i]; 
+        int vec[] = new int[i];
+        int res[] = new int[i];
 
         for(int a = 0; a < i; ++a){
             for(int b = 0; b < i; ++b){
@@ -23,7 +23,7 @@ class matVector{
 
         for(int a = 0; a < i; ++a){
             for(int b = 0; b < i; ++b){
-                aux[a] += mat[a][b] * vec[b];
+                res[a] += mat[a][b] * vec[b];
             }
         }
     }
