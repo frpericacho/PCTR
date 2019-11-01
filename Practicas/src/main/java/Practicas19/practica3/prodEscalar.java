@@ -7,14 +7,19 @@ class prodEscalar{
     static int res;
     static Random r = new Random();
     public static void main(String[] args) {
+        double inicio = System.currentTimeMillis();
         rellena();
         fun();
+        double fini = System.currentTimeMillis();
+        System.out.println(inicio);
+        System.out.println(fini);
+        System.out.printf("%f", fini-inicio);
     }
 
     public static void rellena(){
         for(int i = 0; i < (int)10e6; i++){
-            vec[i] = r.nextInt();
-            vec2[i] = r.nextInt();
+            vec[i] = r.nextInt(10);
+            vec2[i] = r.nextInt(10);
         }
     }
 

@@ -5,6 +5,7 @@ import java.util.Random;
 class matVectorConcurrente implements Runnable {
     static Random r = new Random();
     private int fil;
+    private static int hebras = 2;
     private static int[][] mat;
     private static int[] vec;
     private static int[] res;
@@ -15,13 +16,14 @@ class matVectorConcurrente implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
 
-        int cant = (int)10e6;
+        int cant = (int)10e2;
         mat = new int[cant][cant]; 
         vec = new int[cant];
         res = new int[cant];
 
         Thread[] hilos = new Thread[cant];
 
+        double inicio = System.currentTimeMillis();
         for (int a = 0; a < cant; ++a) {
             for (int b = 0; b < cant; ++b) {
                 mat[a][b] = r.nextInt(10);
@@ -32,13 +34,15 @@ class matVectorConcurrente implements Runnable {
             vec[a] = r.nextInt(10);
         }
 
-        for(int i = 0;i < cant; ++i){
+        for(int i = 0;i < hebras; ++i){
             hilos[i] = new Thread(new matVectorConcurrente(i));
             hilos[i].start();
         }
-        for(int i = 0; i < cant; ++i){
+        for(int i = 0; i < hebras; ++i){
             hilos[i].join();
         }
+        double fini = System.currentTimeMillis();
+        System.out.printf("%f",fini-inicio);
     }
 
     @Override
