@@ -1,4 +1,4 @@
-package practica7;
+package Practicas18.practica7;
 import java.util.*;
 import java.util.concurrent.*;
 

@@ -12,7 +12,7 @@ class prodMatricesParalelo implements Runnable {
     private static int[][] mat2;
     private static int[][] res;
     private static int Cb = 0;
-    private static int cant = (int)4;
+    private static int cant = (int) 10e4;
 
     public prodMatricesParalelo(int fil) {
         this.fil = fil;
@@ -22,59 +22,32 @@ class prodMatricesParalelo implements Runnable {
 
         mat = new int[cant][cant];
         mat2 = new int[cant][cant];
-        res = new int[cant][cant]; 
-        int subra = hebras/(1-Cb);
+        res = new int[cant][cant];
+        int subra = hebras / (1 - Cb);
 
         rellena(mat);
         rellena(mat2);
 
         ExecutorService exe = Executors.newFixedThreadPool(subra);
-        for(int i = 0; i < subra; i++){
+        for (int i = 0; i < subra; i++) {
             exe.execute(new prodMatricesParalelo(i));
         }
         exe.shutdown();
-        while(!exe.isTerminated());
+        while (!exe.isTerminated())
+            ;
 
-
-        for (int i = 0; i < res.length; i++) {
-            for (int j = 0; j < res[i].length; j++) {
-                System.out.print(mat[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        System.out.println();
-        System.out.println("---------------------");
-        System.out.println();
-
-
-        for (int i = 0; i < res.length; i++) {
-            for (int j = 0; j < res[i].length; j++) {
-                System.out.print(mat2[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        System.out.println();
-        System.out.println("---------------------");
-        System.out.println();
-
-        for (int i = 0; i < res.length; i++) {
-            for (int j = 0; j < res[i].length; j++) {
-                System.out.print(res[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 
     @Override
     public void run() {
-        for(int i = 0; i < mat[0].length; ++i){
-            res[fil][i] += mat[fil][i] * mat2[i][fil];
+        for (int i = 0; i < mat[0].length; i++) {
+            for (int j = 0; j < mat[0].length; ++j) {
+                res[fil][i] += mat[fil][j] * mat2[j][i];
+            }
         }
     }
 
-    public static void rellena(int mat[][]){
+    public static void rellena(int mat[][]) {
         for (int a = 0; a < cant; ++a) {
             for (int b = 0; b < cant; ++b) {
                 mat[a][b] = r.nextInt(10);

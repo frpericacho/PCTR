@@ -1,4 +1,5 @@
-package Practicas18.practica7;
+package Practicas19.practica6;
+
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -7,9 +8,7 @@ public class intParaleloFutureCont implements Callable<Integer>{
     private double y,x;
     private Random r = new Random();
     
-    public intParaleloFutureCont(){
-
-    }
+    public intParaleloFutureCont(){}
     
     public Integer call(){
         int cont = 0;
@@ -31,7 +30,7 @@ public class intParaleloFutureCont implements Callable<Integer>{
             fin.add(exe.submit(new intParaleloFutureCont()));
         }
         exe.shutdown();
-        exe.awaitTermination(1, TimeUnit.DAYS);
+        while(!exe.isTerminated());
 
         for(Future<Integer> iter: fin){
             cont += iter.get();
