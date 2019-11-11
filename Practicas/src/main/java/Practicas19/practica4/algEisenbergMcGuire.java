@@ -1,55 +1,64 @@
 package Practicas19.practica4;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-class algEisenbergMcGuire implements Runnable{
-    private static enum estados {esperar,activo,libre};
-    static estados est[] = {estados.libre, estados.libre};
-    private static int turn = 0;
-    private static int inCS = 0;
-    private int i = 0;
+import java.util.concurrent.*;
 
-    public algEisenbergMcGuire(int i){
-        this.i = i;
+public class algEisenbergMcGuire implements Runnable {
+    private static enum estados {Esperando, Ocioso, Activo};
+
+    static estados est[] = new estados[2];
+    private static volatile int n = 0;
+    private int tipohilo;
+    private static int turno = (int) Math.floor(Math.random() * (0 - (+1)) + (1));
+
+    public algEisenbergMcGuire(int tipohilo) {
+        this.tipohilo = tipohilo;
     }
-    
-    public void run(){
+
+    public void run() {
         int index;
-        do{
-            est[i] = estados.esperar;
-
-            index = turn;
-            while(index != i){
-                if(est[index] != estados.libre){
-                    index = turn;
-                }else{
+        do {
+            est[tipohilo] = estados.Esperando;
+            index = turno;
+            while (index != tipohilo) {
+                if (est[index] != estados.Ocioso)
+                    index = turno;
+                else
                     index = (index + 1) % 2;
-                }
             }
 
-            est[i] = estados.activo;
+            est[tipohilo] = estados.Activo;
+
             index = 0;
-            while((index < 2) && ((index == i) || (est[turn] != estados.activo))){
-                index++;
-            }
-        }while(!((index >= 2) && ((turn == i) || (est[turn] == estados.libre))));
-        turn = i;
-        /// critical
-        inCS++;
-        System.out.println(Thread.currentThread().getName() + " " + inCS);
-        inCS--;
-        index = (turn + 1) % 2;
-        while(est[index]==estados.libre){
+            while ((index < 2) && ((index == tipohilo) || (est[index] != estados.Activo)))
+                index = index + 1;
+        } while ((index < 2) && ((turno == tipohilo) || est[turno] == estados.Ocioso));
+        turno = tipohilo;
+        switch (tipohilo) {
+        case 0:
+            n++;
+            break;
+        case 1:
+            n--;
+            break;
+        }
+        index = (turno + 1) % 2;
+        while (est[index] == estados.Ocioso) {
             index = (index + 1) % 2;
         }
-        turn = index;
-        est[i] = estados.libre;
+        turno = index;
+        est[tipohilo] = estados.Ocioso;
     }
-    
-    public static void main(String[] args){
+
+    public static void main(String[] arg) throws Exception {
         ExecutorService exe = Executors.newFixedThreadPool(2);
-        exe.execute(new algEisenbergMcGuire(0));
-        exe.execute(new algEisenbergMcGuire(1));
+        for (int i = 0; i < 2; i++) {
+            exe.execute(new algEisenbergMcGuire(i));
+        }
+
         exe.shutdown();
+        while (!exe.isTerminated()) {
+        }
+
+        System.out.println(n);
     }
 }
