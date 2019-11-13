@@ -3,19 +3,31 @@ package Practicas19.practica5;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+//Tiempo para 1: 17111
+//Tiempo para 2: 8511
+//Tiempo para 4: 6097
+//Tiempo para 8: 5640
+//Tiempo para 16: 5238
+
+//Speed-up para 2: 2.01
+//Speed-up para 4: 2.80
+//Speed-up para 8: 3.03
+//Speed-up para 16: 3.26
 
 class prodMatricesParalelo implements Runnable {
     static Random r = new Random();
-    private int fil;
-    private static int hebras = Runtime.getRuntime().availableProcessors();
+    private int fil,ini,fini;
+    private static int hebras = 16;
     private static int[][] mat;
     private static int[][] mat2;
     private static int[][] res;
     private static int Cb = 0;
-    private static int cant = (int) 10e4;
+    private static int cant = (int) 10e2;
 
-    public prodMatricesParalelo(int fil) {
+    public prodMatricesParalelo(int fil,int ini,int fini) {
         this.fil = fil;
+        this.ini = ini;
+        this.fini = fini;
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -29,20 +41,28 @@ class prodMatricesParalelo implements Runnable {
         rellena(mat2);
 
         ExecutorService exe = Executors.newFixedThreadPool(subra);
+        double inicio = System.currentTimeMillis();
         for (int i = 0; i < subra; i++) {
-            exe.execute(new prodMatricesParalelo(i));
+            int ini = (i * cant)/hebras;
+            int fini = ((i+1) * cant)/hebras;
+            System.out.println(ini + " " + fini);
+            exe.execute(new prodMatricesParalelo(i,ini,fini));
         }
         exe.shutdown();
         while (!exe.isTerminated())
             ;
+        double fin = System.currentTimeMillis();
 
+        System.out.printf("el tiempo ha sido de: " + (fin - inicio));
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < mat[0].length; i++) {
-            for (int j = 0; j < mat[0].length; ++j) {
-                res[fil][i] += mat[fil][j] * mat2[j][i];
+        for(int k = ini; k < fini; k++){
+            for (int i = 0; i < mat[0].length; i++) {
+                for (int j = 0; j < mat[0].length; ++j) {
+                    res[k][i] += mat[k][j] * mat2[j][i];
+                }
             }
         }
     }
