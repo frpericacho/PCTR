@@ -3,7 +3,7 @@ package Practicas19.practica5;
 import java.util.*;
 
 public class resImagen {
-	static int n = 20000;
+	static int n = 2000;
 	static int imagen[][] = new int[n][n];
 
 	public static void operar() {
