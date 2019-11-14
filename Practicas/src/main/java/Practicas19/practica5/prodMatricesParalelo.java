@@ -3,16 +3,6 @@ package Practicas19.practica5;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-//Tiempo para 1: 17111
-//Tiempo para 2: 8511
-//Tiempo para 4: 6097
-//Tiempo para 8: 5640
-//Tiempo para 16: 5238
-
-//Speed-up para 2: 2.01
-//Speed-up para 4: 2.80
-//Speed-up para 8: 3.03
-//Speed-up para 16: 3.26
 
 class prodMatricesParalelo implements Runnable {
     static Random r = new Random();
@@ -22,7 +12,7 @@ class prodMatricesParalelo implements Runnable {
     private static int[][] mat2;
     private static int[][] res;
     private static int Cb = 0;
-    private static int cant = (int) 10e2;
+    private static int cant = (int) 10e4;
 
     public prodMatricesParalelo(int fil,int ini,int fini) {
         this.fil = fil;
