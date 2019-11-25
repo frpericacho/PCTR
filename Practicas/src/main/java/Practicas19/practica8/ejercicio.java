@@ -11,7 +11,7 @@ public class ejercicio {
             libre[i] = true;
         }
     }
-    //monitor
+    // Monitor
     // public synchronized int take_print() {
     // while (impresoras == 0) {
     // try {
@@ -35,9 +35,9 @@ public class ejercicio {
     // System.out.println("suelto la impresora");
     // notifyAll();
     // }
-    //API estandar
+    // API estandar
     public int take_print() {
-        synchronized(cerrojo){
+        synchronized (cerrojo) {
             while (impresoras == 0) {
                 try {
                     cerrojo.wait();
