@@ -26,16 +26,18 @@ public class intParaleloFutureCont implements Callable<Integer>{
         ExecutorService exe=Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         ArrayList<Future<Integer>> fin = new ArrayList<Future<Integer>>();
 
+        long inicio = System.currentTimeMillis();
         for(int i = 0; i < Runtime.getRuntime().availableProcessors(); i++){
             fin.add(exe.submit(new intParaleloFutureCont()));
         }
         exe.shutdown();
         while(!exe.isTerminated());
-
+        long fini = System.currentTimeMillis();
         for(Future<Integer> iter: fin){
             cont += iter.get();
         }
         
         System.out.println("El resultado es: " +((double)cont/(n*4)));
+        System.out.println("el tiempo es: " + (fini-inicio));
     }
 }

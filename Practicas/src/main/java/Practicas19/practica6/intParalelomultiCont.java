@@ -19,12 +19,15 @@ class intParalelomultiCont implements Runnable{
     }
     public static void main(String[] args) {
         ExecutorService exe = Executors.newFixedThreadPool(cores);
+        long inicio = System.currentTimeMillis();
         for(int i = 0; i < cores; i++){
             exe.execute(new intParalelomultiCont(cant/cores,i));
         }
         exe.shutdown();
         while(!exe.isTerminated());
+        long fin = System.currentTimeMillis();
         System.out.println("    El area es: "+ (double)cont/cant);
+        System.out.println("el tiempo es: " + (fin-inicio));
     }
     
     @Override
