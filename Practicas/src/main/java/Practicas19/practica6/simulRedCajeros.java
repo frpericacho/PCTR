@@ -1,7 +1,10 @@
 package Practicas19.practica6;
 
-public class simulRedCajeros implements Runnable{
-    cuentaCorrienteSegura cuenta = new cuentaCorrienteSegura();
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class simulRedCajeros implements Runnable {
+    static cuentaCorrienteSegura cuenta = new cuentaCorrienteSegura();
     int id;
 
     public simulRedCajeros(int id){
@@ -10,9 +13,9 @@ public class simulRedCajeros implements Runnable{
     
     public static void main(String[] args) {
         
-        ExecutorService exe = Executors.newCachedpool();
+        ExecutorService exe = Executors.newCachedThreadPool();
         for(int i = 0; i < 4; i++){
-            exe.(new simulRedCajeros(i%2));     //Falta por hacer que sea lambda
+            exe.execute(new simulRedCajeros(i%2));     //Falta por hacer que sea lambda
         }
         exe.shutdown();
         while(!exe.isTerminated());
