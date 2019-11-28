@@ -3,31 +3,27 @@ package Practicas19.practica6;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class simulRedCajeros implements Runnable {
-    static cuentaCorrienteSegura cuenta = new cuentaCorrienteSegura();
-    int id;
+public class simulRedCajeros {
+    private static cuentaCorrienteSegura cuenta = new cuentaCorrienteSegura(1, 100);
 
-    public simulRedCajeros(int id){
-        this.id = id;
+    public simulRedCajeros() {
     }
-    
+
     public static void main(String[] args) {
-        
+
+        Runnable task = () -> {
+            cuenta.Deposito(10);
+            cuenta.Reintegro(10);
+        };
+
         ExecutorService exe = Executors.newCachedThreadPool();
-        for(int i = 0; i < 4; i++){
-            exe.execute(new simulRedCajeros(i%2));     //Falta por hacer que sea lambda
+        for (int i = 0; i < 4; i++) {
+            exe.execute(task);
         }
         exe.shutdown();
-        while(!exe.isTerminated());
+        while (!exe.isTerminated())
+            ;
 
         System.out.println(cuenta.Saldo());
-    }
-
-    public void run(){
-        if(id==0){
-            cuenta.Deposito(100);
-        }else{
-            cuenta.Reintegro(100);
-        }
     }
 }

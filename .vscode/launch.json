@@ -2,6 +2,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Usa_tareaRunnable",
+            "request": "launch",
+            "mainClass": "Practicas19.practica2.Usa_tareaRunnable",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - clienteMultiple",
+            "request": "launch",
+            "mainClass": "Practicas19.practica6.clienteMultiple",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ServidorHiloconPool",
+            "request": "launch",
+            "mainClass": "Practicas19.practica6.ServidorHiloconPool",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - simulRedCajeros",
+            "request": "launch",
+            "mainClass": "Practicas19.practica6.simulRedCajeros",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - intParalelomultiCont",
+            "request": "launch",
+            "mainClass": "Practicas19.practica6.intParalelomultiCont",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - NewtonRaphson",
             "request": "launch",
             "mainClass": "Practicas19.practica1.NewtonRaphson",
