@@ -1,4 +1,3 @@
-package Practicas19.practica7;
 
 public class Conductores {
     private static Conductor[] conductores = new Conductor[100];
@@ -13,10 +12,10 @@ public class Conductores {
         int i = 0;
         while (ocupado[i])
             i++;
-        if(i< 100){
+        if (i < 100) {
             conductores[i] = cond;
             ocupado[i] = true;
-        }else{
+        } else {
             System.out.println("No hay mas espacio en la base de datos");
         }
     }
@@ -27,15 +26,16 @@ public class Conductores {
             if (conductores[i].get_idConductor() == id) {
                 conductores[i] = null;
                 ocupado[i] = false;
+                i++;
             }
         }
     }
 
-    synchronized String buscarConductor(int id){
+    synchronized String buscarConductor(int id) {
         int i = 0;
         String nombre = null;
-        while(i < 100){
-            if(conductores[i].get_idConductor() == id){
+        while (i < 100) {
+            if (conductores[i].get_idConductor() == id) {
                 nombre = conductores[i].get_nombreConductor();
             }
         }

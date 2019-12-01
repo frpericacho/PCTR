@@ -1,4 +1,3 @@
-package Practicas19.practica6;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

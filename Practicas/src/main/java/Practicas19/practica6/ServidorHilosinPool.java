@@ -1,4 +1,3 @@
-package Practicas19.practica6;
 
 import java.util.*;
 import java.net.*;
@@ -7,6 +6,8 @@ import java.io.*;
 public class ServidorHilosinPool implements Runnable {
     Socket enchufe;
     private int name;
+    public static long total;
+
 
     public ServidorHilosinPool(Socket s, int name) {
         enchufe = s;
@@ -32,7 +33,11 @@ public class ServidorHilosinPool implements Runnable {
         }
         long finCronom = System.currentTimeMillis();
         d.setTime(finCronom);
+        total += (finCronom - inicCronom);
+
         System.out.println("Tiempo: " + (finCronom - inicCronom) + " milisegundos");
+        System.out.println("total es: " + total);
+
     }
 
     public static void main(String[] args) {

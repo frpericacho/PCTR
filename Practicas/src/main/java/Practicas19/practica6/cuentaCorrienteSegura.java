@@ -1,4 +1,3 @@
-package Practicas19.practica6;
 
 public class cuentaCorrienteSegura {
   private int cod;

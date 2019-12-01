@@ -1,9 +1,6 @@
-package Practicas19.practica7;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-//import java.util.concurrent.Semaphore;
 
 public class drakkarVikingo implements Runnable {
     static private int marmita;
@@ -13,24 +10,24 @@ public class drakkarVikingo implements Runnable {
         this.idHilo = i;
     }
 
-    // static Semaphore em, cocinero, vikingo, espera;
     public static void main(String[] args) {
         marmita = 4;
         ExecutorService exe = Executors.newFixedThreadPool(4);
+        exe.execute(new drakkarVikingo(1));
         for (int i = 0; i < 4; i++) {
-            exe.execute(new drakkarVikingo(i));
+            exe.execute(new drakkarVikingo(0));
         }
         exe.shutdown();
     }
 
     public synchronized void comer() throws InterruptedException {
-        if (marmita == 0) {
+        while (marmita == 0) {
             notifyAll();
             wait();
-        } else {
-            marmita--;
-            System.out.println("he comido");
         }
+        marmita--;
+        System.out.println("he comido");
+
     }
 
     public synchronized void cocinar() throws InterruptedException {
@@ -49,39 +46,15 @@ public class drakkarVikingo implements Runnable {
                 try {
                     cocinar();
                 } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-        default:
+        case 1:
             while (true)
                 try {
                     comer();
                 } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
         }
     }
-
-    // version semaphore
-
-    // public static void comer() throws InterruptedException {
-    // while(true){
-    // em.acquire();
-    // if(marmita == 0){
-    // cocinero.release();
-    // espera.acquire();
-    // }
-    // marmita--;
-    // em.release();
-    // }
-    // }
-
-    // public static void cocina() throws InterruptedException {
-    // while(true){
-    // cocinero.acquire();
-    // marmita = 20;
-    // espera.release();
-    // }
-    // }
 }

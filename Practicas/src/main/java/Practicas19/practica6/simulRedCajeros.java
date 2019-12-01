@@ -1,4 +1,3 @@
-package Practicas19.practica6;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

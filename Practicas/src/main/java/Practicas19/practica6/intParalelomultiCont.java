@@ -1,4 +1,3 @@
-package Practicas19.practica6;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -8,7 +7,7 @@ class intParalelomultiCont implements Runnable{
     public int hebra;
     public static int cont;
     public static int cores = Runtime.getRuntime().availableProcessors();
-    public static int cant = 100000;
+    public static int cant = 100000000;
     public static double puntos;
     public static Object cerrojo = new Object();
 

@@ -1,10 +1,9 @@
-package Practicas19.practica6;
 
 import java.util.*;
 import java.util.concurrent.*;
 
 public class intParaleloFutureCont implements Callable<Integer>{
-    public static int n = 100000;
+    public static int n = 100000000;
     private double y,x;
     private Random r = new Random();
     
