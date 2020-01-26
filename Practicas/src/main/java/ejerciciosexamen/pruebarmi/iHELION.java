@@ -1,4 +1,3 @@
-package ejerciciosexamen.pruebarmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

@@ -3,58 +3,60 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class drakkarVikingo implements Runnable {
-    static private int marmita;
-    int idHilo;
 
-    public drakkarVikingo(int i) {
-        this.idHilo = i;
-    }
+    static Drakkar drakk = new Drakkar();
+    private int accion;
 
-    public static void main(String[] args) {
-        marmita = 4;
-        ExecutorService exe = Executors.newFixedThreadPool(4);
+    public static void main(String[] args) throws Exception {
+
+        ExecutorService exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         exe.execute(new drakkarVikingo(1));
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             exe.execute(new drakkarVikingo(0));
         }
         exe.shutdown();
     }
 
-    public synchronized void comer() throws InterruptedException {
+    public void run() {
+        try {
+            while (true) {
+                if (accion == 0) {
+                    drakk.come();
+                } else {
+                    drakk.llena();
+                }
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    public drakkarVikingo(int i) {
+        accion = i;
+    }
+}
+
+class Drakkar {
+    static int marmita = 0;
+
+    public Drakkar() {
+        marmita = 5;
+    }
+
+    public synchronized void llena() throws Exception {
+        while (marmita > 0) {
+            wait();
+        }
+        marmita = 5;
+        System.out.println("lleno");
+        notifyAll();
+    }
+
+    public synchronized void come() throws Exception {
         while (marmita == 0) {
             notifyAll();
             wait();
         }
+        System.out.println("como");
         marmita--;
-        System.out.println("he comido");
-
-    }
-
-    public synchronized void cocinar() throws InterruptedException {
-        while (marmita > 0)
-            wait();
-        marmita = 4;
-        System.out.println("he cocinado");
-        notifyAll();
-    }
-
-    @Override
-    public void run() {
-        switch (idHilo) {
-        case 0:
-            while (true)
-                try {
-                    cocinar();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-        case 1:
-            while (true)
-                try {
-                    comer();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-        }
     }
 }

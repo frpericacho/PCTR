@@ -1,5 +1,3 @@
-package Practicas19.practica8;
-
 public class ejercicio {
     static int impresoras;
     static boolean libre[] = new boolean[3];

@@ -1,4 +1,3 @@
-package ejerciciosexamen.pruebarmi;
 
 import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;

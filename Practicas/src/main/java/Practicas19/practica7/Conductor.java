@@ -11,6 +11,10 @@ public class Conductor {
     String lugarNacimiento;
     String autoridadEmisora;
 
+    public Conductor(){
+        
+    }
+
     public Conductor(int id, int i, String nombre, String nacionalidad, String sexo, String string, String string2,
             String tipo, String nacimiento, String autoridad) {
         this.idConductor = id;
@@ -25,12 +29,12 @@ public class Conductor {
         this.autoridadEmisora = autoridad;
     }
 
-    public int get_idConductor() {
+	public int get_idConductor() {
         return idConductor;
     }
 
     public void set_idConductor(int id) {
-        idConductor = id;
+        this.idConductor = id;
     }
 
     public short get_nPuntos() {
@@ -38,7 +42,7 @@ public class Conductor {
     }
 
     public void set_nPuntos(short puntos) {
-        nPuntos = puntos;
+        this.nPuntos = puntos;
     }
 
     public String get_nombreConductor() {
@@ -46,7 +50,7 @@ public class Conductor {
     }
 
     public void set_nombreConductor(String nombre) {
-        nombreConductor = nombre;
+        this.nombreConductor = nombre;
     }
 
     public String get_nocionalidadConductor() {
@@ -54,7 +58,7 @@ public class Conductor {
     }
 
     public void set_nocionalidadConductor(String nacionalidad) {
-        nocionalidadConductor = nacionalidad;
+        this.nocionalidadConductor = nacionalidad;
     }
 
     public String get_sexoConductor() {
@@ -62,6 +66,6 @@ public class Conductor {
     }
 
     public void set_sexoConductor(String sexo) {
-        sexoConductor = sexo;
+        this.sexoConductor = sexo;
     }
 }

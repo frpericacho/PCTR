@@ -1,4 +1,3 @@
-package practica8;
 import java.util.Objects;
 
 public class Conductor{

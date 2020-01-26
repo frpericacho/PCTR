@@ -1,4 +1,3 @@
-package practica9;
 import java.io.File;
 import java.io.RandomAccessFile;
 

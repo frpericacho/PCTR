@@ -23,11 +23,14 @@ public class Conductores {
     synchronized void borrarConductor(int id) {
         int i = 0;
         while (i < 100) {
-            if (conductores[i].get_idConductor() == id) {
-                conductores[i] = null;
-                ocupado[i] = false;
-                i++;
+            if(ocupado[i]){
+                if (conductores[i].get_idConductor() == id) {
+                    conductores[i] = null;
+                    ocupado[i] = false;
+                    System.out.println("Borrado");
+                }
             }
+            i++;
         }
     }
 
@@ -35,9 +38,12 @@ public class Conductores {
         int i = 0;
         String nombre = null;
         while (i < 100) {
-            if (conductores[i].get_idConductor() == id) {
-                nombre = conductores[i].get_nombreConductor();
+            if (ocupado[i]) {
+                if (conductores[i].get_idConductor() == id) {
+                    nombre = conductores[i].get_nombreConductor();
+                }
             }
+            i++;
         }
         return nombre;
     }

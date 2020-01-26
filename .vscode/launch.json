@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - drakkarVikingo",
+            "request": "launch",
+            "mainClass": "Practicas18.practica8.drakkarVikingo",
+            "projectName": "Practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Usa_tareaRunnable",
             "request": "launch",
             "mainClass": "Practicas19.practica2.Usa_tareaRunnable",

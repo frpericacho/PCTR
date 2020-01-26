@@ -1,4 +1,3 @@
-package Practicas19.practica8;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
